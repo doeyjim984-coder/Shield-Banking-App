@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# Shield Banking App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive banking dashboard built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+This project showcases a polished personal banking experience with animated UI sections, transfer flow simulation, virtual card views, and transaction insights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- Responsive dashboard layout for desktop and mobile
+- Sidebar navigation with tab-based views
+- Smart Wallet overview with balance and quick stats
+- Transaction list with mock transaction data
+- Spending chart visualization section
+- Quick send contacts and quick action shortcuts
+- Virtual card UI component
+- Transfer flow simulation that updates local state
+- Light/Dark theme toggle
+- Skeleton loading states and smooth transitions using Framer Motion
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- ESLint
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Prerequisites
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 18+
+- npm 9+
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Run Development Server
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Open the app at `http://localhost:5173`.
+
+## Available Scripts
+
+- `npm run dev`: Start Vite development server
+- `npm run build`: Type-check and build for production
+- `npm run preview`: Preview production build locally
+- `npm run lint`: Run ESLint
+
+## Project Structure
+
+```text
+src/
+  components/        # Shared UI components (Sidebar, Skeleton, ThemeToggle)
+  features/
+    dashboard/       # Dashboard widgets (charts, quick actions)
+    transactions/    # Transaction list UI
+    transfer/        # Transfer flow
+    virtual-card/    # Virtual card component
+  types/             # Shared TypeScript types
+  utils/             # Utility functions and mock data
+  App.tsx            # Main app layout and tab orchestration
+  main.tsx           # Application entry point
+```
+
+## Notes
+
+- The app currently uses local mock data in `src/utils/mock-data.ts`.
+- Transfers update UI state only (no backend persistence).
+
+## Roadmap
+
+- Add authentication and protected routes
+- Connect to a real backend/API
+- Add form validation and error handling
+- Add unit and integration tests
+
+## License
+
+This project is available under the MIT License.
