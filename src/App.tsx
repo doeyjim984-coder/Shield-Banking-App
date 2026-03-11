@@ -33,7 +33,7 @@ import { ThemeToggle } from './components/ThemeToggle';
 import { ChatWindow } from './features/chat/ChatWindow';
 import { motion, AnimatePresence } from 'framer-motion';
 
-type Tab = 'home' | 'cards' | 'transfer' | 'profile' | 'wealth' | 'settings';
+type Tab = 'home' | 'cards' | 'transfer' | 'profile' | 'wealth' | 'settings' | 'support';
 
 function App() {
   const [activeTab, setActiveTab] = useState<Tab>('home');
@@ -512,7 +512,7 @@ function App() {
           </div>
         </div>
 
-        <ChatWindow />
+        <ChatWindow forceOpen={activeTab === 'support'} />
 
         {/* Mobile Bottom Navigation - Centered & Premium */}
         <nav className="fixed bottom-0 left-0 w-full p-4 pb-8 bg-gradient-to-t from-slate-50 dark:from-navy via-slate-50/90 dark:via-navy/90 to-transparent z-50 lg:hidden pointer-events-none flex justify-center">

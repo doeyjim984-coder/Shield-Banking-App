@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, X, MessageCircle, User, Shield } from 'lucide-react';
+import { Send, X, MessageCircle, Shield } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 interface Message {
@@ -10,8 +10,16 @@ interface Message {
   timestamp: string;
 }
 
-export const ChatWindow = () => {
+interface ChatWindowProps {
+  forceOpen?: boolean;
+}
+
+export const ChatWindow = ({ forceOpen }: ChatWindowProps) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (forceOpen) setIsOpen(true);
+  }, [forceOpen]);
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState<Message[]>([
     { 

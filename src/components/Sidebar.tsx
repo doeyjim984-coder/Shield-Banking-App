@@ -1,4 +1,4 @@
-import { Home, CreditCard, ArrowRightLeft, User, PieChart, Settings } from 'lucide-react';
+import { Home, CreditCard, ArrowRightLeft, User, PieChart, MessageCircle, Settings } from 'lucide-react';
 import { cn } from '../utils/cn';
 
 const navItems = [
@@ -7,6 +7,7 @@ const navItems = [
   { id: 'cards', icon: CreditCard, label: 'Cards' },
   { id: 'wealth', icon: PieChart, label: 'Wealth' },
   { id: 'profile', icon: User, label: 'Profile' },
+  { id: 'support', icon: MessageCircle, label: 'Support' },
 ];
 
 interface SidebarProps {
