@@ -30,6 +30,7 @@ import { MOCK_TRANSACTIONS, MOCK_CONTACTS, MOCK_BALANCE } from './utils/mock-dat
 import { Skeleton } from './components/Skeleton';
 import { Sidebar } from './components/Sidebar';
 import { ThemeToggle } from './components/ThemeToggle';
+import { ChatWindow } from './features/chat/ChatWindow';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Tab = 'home' | 'cards' | 'transfer' | 'profile' | 'wealth' | 'settings';
@@ -359,7 +360,7 @@ function App() {
                                               <p className="text-[10px] font-medium text-slate-400 dark:text-white/30 uppercase mt-0.5">{strategy.desc}</p>
                                            </div>
                                         </div>
-                                        <div className={cn("text-[8px] font-black uppercase px-2 py-1 rounded-md", strategy.status === 'Active' ? 'bg-emerald-500 text-white' : 'bg-slate-200 dark:bg-white/5 text-slate-500')}>
+                                        <div className={cn("text-[8px] font-black uppercase px-2 py-1 rounded-md", strategy.status === 'Active' ? 'bg-emerald-500 text-white' : 'bg-slate-200 dark:bg-white/5 text-slate-500')}> 
                                            {strategy.status}
                                         </div>
                                      </div>
@@ -404,7 +405,7 @@ function App() {
                                   {group.items.map(item => (
                                     <div key={item.label} className="flex justify-between items-center group cursor-pointer">
                                        <span className="text-sm font-bold text-slate-600 dark:text-white/60 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">{item.label}</span>
-                                       <div className={cn("w-10 h-6 rounded-full relative p-1 transition-colors duration-300", item.enabled ? 'bg-emerald-500' : 'bg-slate-200 dark:bg-white/10')}>
+                                       <div className={cn("w-10 h-6 rounded-full relative p-1 transition-colors duration-300", item.enabled ? 'bg-emerald-500' : 'bg-slate-200 dark:bg-white/10')}> 
                                           <div className={cn("w-4 h-4 bg-white rounded-full transition-transform duration-300", item.enabled ? 'translate-x-4' : 'translate-x-0')} />
                                        </div>
                                     </div>
@@ -510,6 +511,8 @@ function App() {
             </AnimatePresence>
           </div>
         </div>
+
+        <ChatWindow />
 
         {/* Mobile Bottom Navigation - Centered & Premium */}
         <nav className="fixed bottom-0 left-0 w-full p-4 pb-8 bg-gradient-to-t from-slate-50 dark:from-navy via-slate-50/90 dark:via-navy/90 to-transparent z-50 lg:hidden pointer-events-none flex justify-center">
