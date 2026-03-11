@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, X, MessageCircle, User, Shield } from 'lucide-react';
+import { Send, X, MessageCircle, Shield } from 'lucide-react';
 import { cn } from '../../utils/cn';
 
 interface Message {
